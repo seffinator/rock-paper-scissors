@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Rock Paper Scissors</title>
 </head>
 <body>
     <script>
@@ -12,16 +12,47 @@
             "Rock",
             "Paper",
             "Scissors"
-        ]
-        function computerPlay() {
-            let randomAction = action[Math.floor(Math.random()*action.length)];
-        }
+        ];
 
-        function playerSelection(playerAction) {
-            if (playerAction === "Rock") {
-                return playerAction;
+        let computerAction = action[Math.floor(Math.random()*action.length)];
+        computerAction = computerAction.toUpperCase();
+
+        console.log(computerAction);
+
+        let playerAction = prompt("Please enter your chosen move: ");
+        playerAction = playerAction.toUpperCase();
+
+        function beginRound() {
+            if (playerAction === "ROCK" || playerAction === "PAPER" || playerAction === "SCISSORS") {
+                alert(`You have chosen: ${playerAction}`);
+            } else {
+                alert("Please enter a valid input...");
+            }
+
+            if (playerAction === computerAction)
+                alert("Draw.");
+            else if (playerAction === "ROCK" && computerAction === "PAPER") {
+                alert("You lost...");
+            }
+            else if (playerAction === "PAPER" && computerAction === "ROCK") {
+                alert("You won!");
+            }
+            else if (playerAction === "SCISSORS" && computerAction === "PAPER") {
+                alert("You won!);")
+            }
+            else if (playerAction === "PAPER" && computerAction === "SCISSORS") {
+                alert("You lost...");
+            }
+            else if (playerAction === "ROCK" && computerAction === "SCISSORS") {
+                alert("You won!");
+            }
+            else if (playerAction === "SCISSORS" && computerAction === "ROCK") {
+                alert("You lost...");
             }
         }
+
+        function beginGame()
+
     </script>
 </body>
 </html>
