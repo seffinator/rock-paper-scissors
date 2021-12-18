@@ -33,17 +33,22 @@ function playRound(playerSelection) {
 const buttons = document.querySelectorAll('button');
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
-        playRound(button.value);
+        if (playerPoints == 5 || computerPoints == 5) 
+            return;
+        else  
+            playRound(button.value);  
     });
 });
 
 function gameOver() {
     if (playerPoints == 5) {
-        alert("You've won the game!!!");
+        alert("You've won the game!!!\nPlease press refresh to play again.");
 
     }
     else if (computerPoints == 5) {
-        alert("You've lost the game...");
+        alert("You've lost the game...\nPlease press refresh to play again.");
+    } else 
+        alert("Stalemate...\nPlease press refresh to play again.")
 
-    }
+
 }
