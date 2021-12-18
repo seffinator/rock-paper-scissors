@@ -40,15 +40,20 @@ buttons.forEach((button) => {
     });
 });
 
+/*
+const playerResult = document.querySelector('#player');
+playerResult.innerText = `${playerPoints}`;
+return playerResult;
+
+const computerResult = document.querySelector('#computer');
+computerResult.innerText = `${computerPoints}`;
+return computerResult; not working as expected*/
+
 function gameOver() {
-    if (playerPoints == 5) {
+    if (playerPoints == 5) 
         alert("You've won the game!!!\nPlease press refresh to play again.");
-
-    }
-    else if (computerPoints == 5) {
+    else if (computerPoints == 5) 
         alert("You've lost the game...\nPlease press refresh to play again.");
-    } else 
+    else 
         alert("Stalemate...\nPlease press refresh to play again.")
-
-
 }
