@@ -4,6 +4,7 @@ let computerPoints = 0;
 function computerPlay() {
     let computerActions = ["rock", "paper", "scissors"];
     return computerActions[Math.floor(Math.random() * computerActions.length)];
+    console.log(computerActions);
 }
 
 function playRound(playerSelection) {
@@ -16,17 +17,9 @@ function playRound(playerSelection) {
     } 
     else if (playerSelection === computerSelection) {
         alert(" You have drawn this round.");
-        playerPoints++;
-        computerPoints++;
     } else {
         alert("You lose this round...");
         computerPoints++
-    }
-    if (playerPoints == 5) {
-        gameOver();
-    }
-    else if (computerPoints == 5) {
-        gameOver();
     }
 }
 
@@ -37,13 +30,20 @@ buttons.forEach((button) => {
     });
 });
 
-function gameOver() {
-    if (playerPoints == 5) {
-        alert("You've won the game!!!");
-
-    }
-    else if (computerPoints == 5) {
-        alert("You've lost the game...");
-
-    }
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PSR 2</title>
+    <script src="rock-paper-scissors.js" defer></script>
+</head>
+<body>
+    <div id="container">
+        <button id="button-rock" value="rock">Rock</button>
+        <button id="button-paper" value="paper">Paper</button>
+        <button id="button-scissors" value="scissors">Scissors</button>
+    </div>
+</body>
+</html>

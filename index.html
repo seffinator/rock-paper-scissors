@@ -4,55 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rock Paper Scissors</title>
+    <title>PSR 2</title>
+    <script src="rock-paper-scissors.js" defer></script>
 </head>
 <body>
-    <script>
-        let action = [
-            "Rock",
-            "Paper",
-            "Scissors"
-        ];
-
-        let computerAction = action[Math.floor(Math.random()*action.length)];
-        computerAction = computerAction.toUpperCase();
-
-        console.log(computerAction);
-
-        let playerAction = prompt("Please enter your chosen move: ");
-        playerAction = playerAction.toUpperCase();
-
-        function beginRound() {
-            if (playerAction === "ROCK" || playerAction === "PAPER" || playerAction === "SCISSORS") {
-                alert(`You have chosen: ${playerAction}`);
-            } else {
-                alert("Please enter a valid input...");
-            }
-
-            if (playerAction === computerAction)
-                alert("Draw.");
-            else if (playerAction === "ROCK" && computerAction === "PAPER") {
-                alert("You lost...");
-            }
-            else if (playerAction === "PAPER" && computerAction === "ROCK") {
-                alert("You won!");
-            }
-            else if (playerAction === "SCISSORS" && computerAction === "PAPER") {
-                alert("You won!);")
-            }
-            else if (playerAction === "PAPER" && computerAction === "SCISSORS") {
-                alert("You lost...");
-            }
-            else if (playerAction === "ROCK" && computerAction === "SCISSORS") {
-                alert("You won!");
-            }
-            else if (playerAction === "SCISSORS" && computerAction === "ROCK") {
-                alert("You lost...");
-            }
-        }
-
-        function beginGame()
-
-    </script>
+    <div id="container">
+        <button id="button-rock" value="rock">Rock</button>
+        <button id="button-paper" value="paper">Paper</button>
+        <button id="button-scissors" value="scissors">Scissors</button>
+    </div>
 </body>
 </html>
