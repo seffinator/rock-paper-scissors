@@ -26,6 +26,7 @@ body {
     display: flex;
     justify-content: space-between;
     gap: 24px;
+    margin-bottom: 24px;
 }
 
 #primary-container {
@@ -58,3 +59,18 @@ body {
     background-color:rgb(224, 219, 217)
 }
 
+#result {
+    display: flex;
+    justify-content: space-around;
+    gap: 24px;
+}
+
+#player,
+#computer {
+    background-color:rgb(226, 208, 202);
+    border: solid 4px;
+    border-color:rgb(223, 125, 92);
+    border-radius: 8px;
+    width: 100%;
+    text-align: center;
+}

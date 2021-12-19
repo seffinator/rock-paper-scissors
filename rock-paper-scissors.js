@@ -1,6 +1,8 @@
 let playerPoints = 0;
 let computerPoints = 0;
 
+scoreBoard(playerPoints, computerPoints);
+
 function computerPlay() {
     let computerActions = ["rock", "paper", "scissors"];
     return computerActions[Math.floor(Math.random() * computerActions.length)];
@@ -11,16 +13,20 @@ function playRound(playerSelection) {
     if ((playerSelection === "rock" && computerSelection === "scissors") ||
     (playerSelection === "scissors" && computerSelection === "paper") ||
     (playerSelection === "paper" && computerSelection === "rock")) {
-        alert("You win this round!");
         playerPoints++;
+        scoreBoard();
+        alert("You win this round!");
     } 
     else if (playerSelection === computerSelection) {
-        alert(" You have drawn this round.");
         playerPoints++;
         computerPoints++;
+        scoreBoard();
+        alert(" You have drawn this round.");
     } else {
-        alert("You lose this round...");
         computerPoints++
+        scoreBoard();
+        setTimeout(() => {})
+        alert("You lose this round...");  
     }
     if (playerPoints == 5) {
         gameOver();
@@ -40,20 +46,29 @@ buttons.forEach((button) => {
     });
 });
 
-/*
-const playerResult = document.querySelector('#player');
-playerResult.innerText = `${playerPoints}`;
-return playerResult;
+function scoreBoard() {
+    const playerResult = document.querySelector('#player');
+    playerResult.textContent = playerPoints;
 
-const computerResult = document.querySelector('#computer');
-computerResult.innerText = `${computerPoints}`;
-return computerResult; not working as expected*/
+    const computerResult = document.querySelector('#computer');
+    computerResult.textContent = computerPoints;
+}
+
+const computerWon = document.querySelector('#computer');
+const playerWon = document.querySelector('#player');
 
 function gameOver() {
-    if (playerPoints == 5) 
+    if (playerPoints == 5) {
         alert("You've won the game!!!\nPlease press refresh to play again.");
-    else if (computerPoints == 5) 
+        playerWon.style.backgroundColor = "#7efa78";
+    }    
+    else if (computerPoints == 5) {
+        computerWon.style.backgroundColor = '#ff6969';
         alert("You've lost the game...\nPlease press refresh to play again.");
-    else 
-        alert("Stalemate...\nPlease press refresh to play again.")
+    }
+    else {
+        playerWon.style.backgroundColor = '#868786';
+        computerWon.style.backgroundColor = "#868786";
+        alert("Stalemate...\nPlease press refresh to play again.");
+    }
 }
