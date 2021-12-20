@@ -25,13 +25,9 @@ function playRound(playerSelection) {
     } else {
         computerPoints++
         scoreBoard();
-        setTimeout(() => {})
         alert("You lose this round...");  
     }
-    if (playerPoints == 5) {
-        gameOver();
-    }
-    else if (computerPoints == 5) {
+    if (playerPoints == 5 || computerPoints == 5) {
         gameOver();
     }
 }
